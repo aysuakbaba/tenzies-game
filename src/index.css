@@ -11,6 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: 'Karla', sans-serif;
   
 }
 
@@ -59,6 +60,18 @@ main{
   color: antiquewhite;
   font-size: 20px;
   cursor: pointer;
+  font-family: 'Karla', sans-serif;
+
+}
+
+.roll-dice:hover{
+  background-color: rgb(4, 4, 82);
+}
+
+.roll-dice:active {
+  background-color: rgb(4, 4, 82);
+  box-shadow: 10px 10px 30px rgb(34, 25, 72);
+  transform: translateY(1px);
 }
 
 
