@@ -5,6 +5,15 @@ import { nanoid } from "nanoid";
 function App() {
   const [dice, setDice] = React.useState(allNewDices());
 
+  function generateNewDie(){
+    return {
+      value: Math.ceil(Math.random() * 6),
+      isHeld: false,
+      id: nanoid()
+
+    }
+  }
+
   function allNewDices() {
     const newDice = [];
     for (let i = 0; i < 10; i++) {
@@ -17,10 +26,12 @@ function App() {
     return newDice;
   }
 
- 
 
   function rollDice() {
-    setDice(allNewDices());
+    setDice(oldDice => oldDice.map(die => {
+      return die.isHeld ?
+          die : generateNewDie()
+    }));
   }
 
   function holdDice(id) {
